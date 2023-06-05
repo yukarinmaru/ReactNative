@@ -28,9 +28,8 @@ export const loadAll = async () => {
     keys.sort();
     // console.log(keys);
     const entryList = await AsyncStorage.multiGet(keys);
-    // console.log("entryList",entryList);
-    // return entryList;
-    return entryList.map(entry => {
-        JSON.parse(entry[1])
-    });
+    return entryList;
+    //  return entryList.map(entry => {
+    //     JSON.parse(entry[1])
+    // });
 };

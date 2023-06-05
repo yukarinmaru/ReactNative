@@ -14,20 +14,11 @@ export const MainScreen = () => {
         const initialize = async() => {
             //　ここに更新表示処理を書く
             const newMemos = await loadAll();
-            setMemos(newMemos);
 
-            // console.log(newMemos);
-
-            // const nextMemos = newMemos.map(item=> JSON.parse(item[1]))
-            // console.log("nextMemos",nextMemos);
-
-            // console.log("newMemos",newMemos.map(item=> JSON.parse(item[1])));
-
-
-            // setMemos(nextMemos);
-            // console.log("memos",memos);
-            // setMemos(nextMemos);
-        };
+            const nextMemos = newMemos.map(item=> JSON.parse(item[1]))
+            console.log("nextMemos",nextMemos);
+            setMemos(nextMemos);
+       };
 
         const unsubscribe = navigation.addListener('focus', initialize);
 
